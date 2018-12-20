@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', 'WishController@index');
-
-
 Route::get('/debug', function () {
 
     $debug = [
@@ -39,3 +36,15 @@ Route::get('/debug', function () {
 
     dump($debug);
 });
+
+
+Route::get('/', 'WishController@index');
+
+//CREATE
+Route::get('/create', 'WishController@create');
+
+//UPDATE
+Route::put('/{id}/edit', 'WishController@update');
+
+//DELETE
+Route::delete('/{id}', 'WishController@delete');

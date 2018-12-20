@@ -2,7 +2,7 @@
 <html lang='en'>
 
 <head>
-    <title>2019 Goals</title>
+    <title>2019 Wishes</title>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="css/WeldStyles.css"/>

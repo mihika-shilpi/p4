@@ -481,7 +481,7 @@ footer {
     font-size: 0.7rem;
     padding: 0.5rem;
     background-color: white;
-    box-shadow: 0 5px 15px silver;
+    box-shadow: 0 5px 15px #2b2b2b;
 }
 
 #content {
@@ -503,7 +503,7 @@ nav {
     justify-content: space-between;
     flex-wrap: wrap;
     overflow: auto;
-    box-shadow: 0 5px 15px silver;
+    box-shadow: 0 5px 15px #2b2b2b;
     position: relative;
     transition: all 0.7s ease-in-out;
     transform: translateY(-12.5rem);
@@ -546,7 +546,7 @@ nav li a:hover {
 
 nav li a.active {
     font-weight: 700;
-    color: #bfb800;
+    color: #003cff;
 }
 
 span.hamburger {
@@ -609,7 +609,7 @@ span.hamburger:focus ~ .move {
 
     nav li a.active {
         font-weight: 700;
-        color: #bfb800;
+        color: #003cff;
     }
 }
 
@@ -652,7 +652,7 @@ h2 {
     text-transform: uppercase;
     font-size: calc(var(--basefontserif) * 0.8);
     line-height: calc(var(--lineheight) * 1.5);
-    border-bottom: 1px solid #bfb800;
+    border-bottom: 1px solid #003cff;
     margin-bottom: calc(var(--textpadd) * 0.5);
 }
 
@@ -662,7 +662,7 @@ h3 {
     font-style: italic;
     font-size: calc(var(--basefontserif) * 0.75);
     line-height: calc(var(--lineheight) * 2);
-    color: #bfb800;
+    color: #003cff;
 }
 
 p {
@@ -673,7 +673,7 @@ p {
 
 a:link, a:visited {
     text-decoration: none;
-    color: #bfb800;
+    color: #003cff;
 }
 
 a:hover {
@@ -800,7 +800,7 @@ code {
 .card-light {
     color: #5a5a5a;
     background-color: white;
-    box-shadow: 0 5px 15px silver;
+    box-shadow: 0 5px 15px #2b2b2b;
     margin: 0.66667rem;
     background-size: cover;
 }
@@ -851,7 +851,7 @@ code {
 }
 
 .card-light.dotted-border {
-    border: 2px dotted #bfb800;
+    border: 2px dotted #003cff;
 }
 
 .card-light.left-rule {
@@ -865,8 +865,8 @@ code {
 .card-dark {
     color: silver;
     background-color: #272727;
-    box-shadow: 0 5px 15px silver;
-    box-shadow: 0 5px 15px silver;
+    box-shadow: 0 5px 15px #2b2b2b;
+    box-shadow: 0 5px 15px #2b2b2b;
     margin: 0.66667rem;
     background-size: cover;
 }
@@ -917,7 +917,7 @@ code {
 }
 
 .card-dark.dotted-border {
-    border: 2px dotted #bfb800;
+    border: 2px dotted #003cff;
 }
 
 .card-dark.left-rule {
@@ -930,8 +930,8 @@ code {
 
 .card-primary {
     color: #272727;
-    background-color: #bfb800;
-    box-shadow: 0 5px 15px silver;
+    background-color: #003cff;
+    box-shadow: 0 5px 15px #2b2b2b;
     margin: 0.66667rem;
     background-size: cover;
 }
@@ -982,7 +982,7 @@ code {
 }
 
 .card-primary.dotted-border {
-    border: 2px dotted #bfb800;
+    border: 2px dotted #003cff;
 }
 
 .card-primary.left-rule {
@@ -995,8 +995,8 @@ code {
 
 .card-secondary {
     color: #272727;
-    background-color: #ffc800;
-    box-shadow: 0 5px 15px silver;
+    background-color: #ff003c;
+    box-shadow: 0 5px 15px #2b2b2b;
     margin: 0.66667rem;
     background-size: cover;
 }
@@ -1047,7 +1047,7 @@ code {
 }
 
 .card-secondary.dotted-border {
-    border: 2px dotted #bfb800;
+    border: 2px dotted #003cff;
 }
 
 .card-secondary.left-rule {
@@ -1087,12 +1087,12 @@ button {
 }
 
 button.primary {
-    background-color: #bfb800;
+    background-color: #003cff;
     color: white;
 }
 
 button.secondary {
-    background-color: #ffc800;
+    background-color: #ff003c;
     color: #272727;
 }
 
@@ -1101,6 +1101,7 @@ button.icon {
     height: 2rem;
     border-radius: 2rem;
     right: 1rem;
+    margin: 0rem 0.25rem;
 }
 
 button img {

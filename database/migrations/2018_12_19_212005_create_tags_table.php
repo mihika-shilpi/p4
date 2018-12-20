@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWishesTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateWishesTable extends Migration
      */
     public function up()
     {
-        Schema::create('wishes', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-
-            #my fields
-            $table->string('title', 50);
-            $table->string('writer', 50)->nullable();;
-            $table->string('description', 250);
+            $table->string('name');
         });
     }
 
@@ -31,6 +27,6 @@ class CreateWishesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wishes');
+        Schema::dropIfExists('tags');
     }
 }
