@@ -32,12 +32,7 @@
             <button type='submit' class="primary" value="submit-true" name="Wish">
                 w i s h !
             </button>
-            {{--<button type='submit'--}}
-            {{--class="primary icon"--}}
-            {{--value="submit-true"--}}
-            {{--name="Wish">--}}
-            {{--<img src="/images/add.png">--}}
-            {{--</button>--}}
+
             <input type='hidden' name='submitted' value='1'>
 
         </form>

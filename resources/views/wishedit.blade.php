@@ -19,7 +19,8 @@
             </label>
 
             <label>Description
-                <input class="uk-input" type="text" name="description" value='{{ old('description', $wish->description) }}'>
+                <input class="uk-input" type="text" name="description"
+                       value='{{ old('description', $wish->description) }}'>
             </label>
 
             <label>Tags

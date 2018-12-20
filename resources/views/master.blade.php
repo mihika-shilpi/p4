@@ -36,9 +36,10 @@
 
         <div class="bandeau" style="background-image:url(/images/cover19.jpg)">
             <h1 class="white">Wishes 2019</h1>
-            <p class="white">Every year we make new resolutions - to be fitter, better, kinder - what about making resolutions for the world? From the serious to the ludicrous, we invite you to imagine 2019's resolutions.</p>
+            <p class="white">Every year we make new resolutions - to be fitter, better, kinder - what about making
+                resolutions for the world? From the serious to the ludicrous, we invite you to imagine 2019's
+                resolutions.</p>
         </div>
-
 
 
         <div class="row">

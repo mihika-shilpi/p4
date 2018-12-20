@@ -1,5 +1,3 @@
-
-
 @foreach($wishes as $wish)
     <div class="card-dark">
         <h2>{{ $wish->title }}</h2>
@@ -8,7 +6,6 @@
         <code>@foreach($wish->tags as $tag)
                 #{{ $tag->name }}
             @endforeach</code>
-
 
 
         <form method='POST' action='/{{ $wish->id }}'>
