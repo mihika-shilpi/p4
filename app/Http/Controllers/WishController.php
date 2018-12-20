@@ -11,7 +11,7 @@ class WishController extends Controller
 {
     public function index()
     {
-        $wishes = Wish::orderBy('updated_at')->get();
+        $wishes = Wish::orderBy('updated_at', 'DESC')->get();
 
         return view('wishes')->with([
             'wishes' => $wishes
@@ -71,13 +71,12 @@ class WishController extends Controller
 
         # Note: Have to sync tags *after* the wish has been saved so there's a wish_id to store in the pivot table
 
-        $wishes = Wish::orderBy('updated_at')->get();
+        $wishes = Wish::orderBy('updated_at', 'DESC')->get();
 
 
         return redirect('/')->with([
             'wishes' => $wishes,
             'submitted' => $submitted,
-            'alert' => 'Your wish was added :)'
         ]);
     }
 
@@ -86,7 +85,7 @@ class WishController extends Controller
     */
     public function edit($id)
     {
-        $wishes = Wish::orderBy('updated_at')->get();
+        $wishes = Wish::orderBy('updated_at', 'DESC')->get();
         $thiswish = wish::find($id);
         $tagsForThiswish = $thiswish->tags()->pluck('tags.id')->toArray();
 
@@ -147,7 +146,6 @@ class WishController extends Controller
         }
 
         return redirect('/')->with([
-            'alert' => 'The Wish has been updated!'
         ]);
     }
 

@@ -21,7 +21,7 @@
                 <input class="uk-input" type="text" name="description" value='{{ old('description') }}'>
             </label>
 
-            <label>Tags
+            <label>Tags (separate tags with commas)
                 <input class="uk-input" type="text" name="tags" value='{{ old('tags') }}'>
             </label>
 

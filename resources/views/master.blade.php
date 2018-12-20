@@ -43,7 +43,7 @@
 
 
         <div class="row">
-            <div class="card-dark col-span-2-6 no-shadow no-margin right-rule">
+            <div class="card-dark col-span-2-6 no-shadow no-margin">
                 @yield('form')
             </div>
 
