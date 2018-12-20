@@ -5,8 +5,8 @@
     <title>2019 Wishes</title>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="css/WeldStyles.css"/>
-    <link rel="stylesheet" href="css/Styles.css">
+    <link rel="stylesheet" href="/css/WeldStyles.css"/>
+    <link rel="stylesheet" href="/css/Styles.css">
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
     @stack('head')
@@ -22,7 +22,6 @@
         <a name="menuham">
             <ul>
                 <li>world wishes</li>
-                <li>my wishes</li>
             </ul>
         </a>
 
@@ -35,7 +34,22 @@
 
     <main>
 
-        @yield('content')
+        <div class="bandeau" style="background-image:url(/images/cover19.jpg)">
+            <h1 class="white">Wishes 2019</h1>
+            <p class="white">Every year we make new resolutions - to be fitter, better, kinder - what about making resolutions for the world? From the serious to the ludicrous, we invite you to imagine 2019's resolutions.</p>
+        </div>
+
+
+
+        <div class="row">
+            <div class="card-dark col-span-2-6 no-shadow no-margin right-rule">
+                @yield('form')
+            </div>
+
+
+            <div class="card-primary col-span-4-6 no-shadow no-margin">
+                @yield('wishes')
+            </div>
 
     </main>
 

@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Tag;
+use App\Wish;
 
-class WishTagTableSeeder extends Seeder
+class TagWishTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,9 +14,9 @@ class WishTagTableSeeder extends Seeder
     public function run()
     {
         $wishes =[
-            'Pet Protection Laws' => ['novel', 'fiction', 'classic', 'wealth'],
-            'SpaceRail' => ['novel', 'fiction', 'classic', 'women'],
-            'I (Believe I) Can Fly' => ['autobiography', 'nonfiction', 'classic', 'women']
+            'Pet Protection Laws' => ['peace','equality'],
+            'SpaceRail' => ['travel', 'society'],
+            'I (Believe I) Can Fly' => ['happiness', 'travel', 'society']
         ];
 
         # Now loop through the above array, creating a new pivot for each wish to tag
@@ -33,3 +35,4 @@ class WishTagTableSeeder extends Seeder
         }
     }
 }
+

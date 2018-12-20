@@ -41,10 +41,11 @@ Route::get('/debug', function () {
 Route::get('/', 'WishController@index');
 
 //CREATE
-Route::get('/create', 'WishController@create');
+Route::POST('/create', 'WishController@create');
 
 //UPDATE
-Route::put('/{id}/edit', 'WishController@update');
+Route::get('/{id}/edit', 'WishController@edit');
+Route::put('/{id}/update', 'WishController@update');
 
 //DELETE
 Route::delete('/{id}', 'WishController@delete');

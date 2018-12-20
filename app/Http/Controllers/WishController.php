@@ -20,7 +20,7 @@ class WishController extends Controller
     }
 
     /**
-     * GET /wishes
+     * POST /wishes
      * Process the form for adding a new wish
      */
     public function create(Request $request)
@@ -48,20 +48,18 @@ class WishController extends Controller
             $wish->writer_id = $newWriter->id;
         }
 
-
-
         $wish->save();
 
 //        print($wish);
         $submitted = $request->input('submitted', null);
 
         # Note: Have to sync tags *after* the wish has been saved so there's a wish_id to store in the pivot table
-        $wish->tags()->sync($request->tags);
+//        $wish->tags()->sync($request->tags);
 
         $wishes = Wish::orderBy('updated_at')->get();
 
 
-        return view('wishes')->with([
+        return redirect('/')->with([
             'wishes' => $wishes,
             'submitted' => $submitted,
             'alert' => 'Your wish was added :)'
@@ -72,19 +70,13 @@ class WishController extends Controller
     */
     public function edit($id)
     {
-        $wish = wish::find($id);
-        $writers = writer::getForDropdown();
-        $tags = Tag::getForCheckboxes();
-        $tagsForThiswish = $wish->tags()->pluck('tags.id')->toArray();
-        if (!$wish) {
-            return view('wishes')->with([
-                'alert' => 'wish not found.'
-            ]);
-        }
-        return view('wish_edit')->with([
-            'wish' => $wish,
-            'writers' => $writers,
-            'tags' => $tags,
+        $wishes = Wish::orderBy('updated_at')->get();
+        $thiswish = wish::find($id);
+        $tagsForThiswish = $thiswish->tags()->pluck('tags.id')->toArray();
+
+        return view('wishedit')->with([
+            'wishes' => $wishes,
+            'wish' => $thiswish,
             'tagsForThiswish' => $tagsForThiswish
         ]);
     }
@@ -93,19 +85,34 @@ class WishController extends Controller
     */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'title' => 'required | string | max:50',
-            'description' => 'string | max:250 | nullable',
-            'writer_id' => 'required | alpha_num',
-            'tags' => 'string | nullable',
+        $request->validate([
+            'title' => 'required|string|max:50',
+            'description' => 'string|max:250|nullable',
+            'writer' => 'required|alpha_num',
+            'tags' => 'string|nullable',
         ]);
+
         $wish = wish::find($id);
+
         $wish->tags()->sync($request->tags);
+
         $wish->title = $request->title;
-        $wish->writer_id = $request->writer_id;
         $wish->description = $request->description;
+
+        $writer = Writer::where('name', '=', 'writer')->first();
+        if ($writer) {
+            $wish->writer_id = $writer->id;
+        }
+        else {
+            $newWriter = new Writer();
+            $newWriter->name = $request->writer;
+            $newWriter->save();
+            $wish->writer_id = $newWriter->id;
+        }
+
         $wish->save();
-        return view('wishes')->with([
+
+        return redirect('/')->with([
             'alert' => 'The Wish has been updated!'
         ]);
     }
@@ -121,7 +128,7 @@ class WishController extends Controller
         }
         $wish->tags()->detach();
         $wish->delete();
-        return view('wishes')->with('alert', 'We hope you are only deleting a wish if it is offensive or innapropriate. 2019 needs us to respect the wishes of everybody!');
+        return redirect('/');
     }
 
 }

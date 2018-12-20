@@ -3,34 +3,39 @@
 @section('form')
 
     <div>
-        <h2>Add a Wish</h2>
-        <p>Fill in a wish for the world!</p>
+        <h2>Editing Wish</h2>
+        <p>Please be mindful to not change other people's wishes. You may edit them to add or improve them!</p>
         <br>
 
         <form method="POST"
-              action="/create"
+              action="/{{ $wish->id }}/update"
               class="uk-form-stacked">
+            {{ method_field('put') }}
 
             {{ csrf_field() }}
 
             <label>Title
-                <input class="uk-input" type="text" name="title" value='{{ old('title') }}'>
+                <input class="uk-input" type="text" name="title" value='{{ old('title', $wish->title) }}'>
             </label>
 
             <label>Description
-                <input class="uk-input" type="text" name="description" value='{{ old('description') }}'>
+                <input class="uk-input" type="text" name="description" value='{{ old('description', $wish->description) }}'>
             </label>
 
             <label>Tags
-                <input class="uk-input" type="text" name="tags" value='{{ old('tags') }}'>
+                <input class="uk-input" type="text" name="tags" value='{{ old('tags',
+                @foreach($wish->tags as $tag)
+                $tag->name
+                @endforeach
+                    ) }}'>
             </label>
 
             <label>Your Name
-                <input class="uk-input" type="text" name="writer" value='{{ old('writer') }}'>
+                <input class="uk-input" type="text" name="writer" value='{{ old('writer', $wish->writer->getName() )}}'>
             </label>
 
             <button type='submit' class="primary" value="submit-true" name="Wish">
-                w i s h !
+                d o n e !
             </button>
             {{--<button type='submit'--}}
             {{--class="primary icon"--}}

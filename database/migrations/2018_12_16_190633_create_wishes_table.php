@@ -19,7 +19,6 @@ class CreateWishesTable extends Migration
 
             #my fields
             $table->string('title', 50);
-            $table->string('writer', 50)->nullable();;
             $table->string('description', 250);
         });
     }
