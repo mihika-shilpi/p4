@@ -1,3 +1,5 @@
+
+
 @foreach($wishes as $wish)
     <div class="card-dark">
         <h2>{{ $wish->title }}</h2>

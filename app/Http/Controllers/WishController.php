@@ -48,13 +48,40 @@ class WishController extends Controller
             $wish->writer_id = $newWriter->id;
         }
 
+        $tags = explode(",","$request->tags");
+//        dd($tags);
+
+//        foreach ($tags as $thistag) {
+//            $tag = Tag::where('name', '=', $thistag)->first();
+//            if ($tag) {
+//                $wish->tag_id = $tag->id;
+//                $wish->tags()->save($tag);
+//            }
+//            else {
+//                $newTag = new Tag();
+//                $newTag->name = $thistag;
+//                $newTag->save();
+//                $wish->tags()->save($newTag);
+//            }
+//
+
+//            $tag = Tag::where('name', 'LIKE', $tagName)->first();
+//
+//            # Connect this tag to this wish
+//            $wish->tags()->save($tag);
+
+
+//        }
+            #{{ $tag->name }}
+
+
         $wish->save();
 
 //        print($wish);
         $submitted = $request->input('submitted', null);
 
         # Note: Have to sync tags *after* the wish has been saved so there's a wish_id to store in the pivot table
-//        $wish->tags()->sync($request->tags);
+
 
         $wishes = Wish::orderBy('updated_at')->get();
 
@@ -94,7 +121,7 @@ class WishController extends Controller
 
         $wish = wish::find($id);
 
-        $wish->tags()->sync($request->tags);
+//        $wish->tags()->sync($request->tags);
 
         $wish->title = $request->title;
         $wish->description = $request->description;

@@ -23,11 +23,8 @@
             </label>
 
             <label>Tags
-                <input class="uk-input" type="text" name="tags" value='{{ old('tags',
-                @foreach($wish->tags as $tag)
-                $tag->name
-                @endforeach
-                    ) }}'>
+                <input class="uk-input" type="text" name="tags" value='{{old('tags')}}
+@foreach($wish->tags as $tag){{$tag->name}}, @endforeach'>
             </label>
 
             <label>Your Name
@@ -37,6 +34,10 @@
             <button type='submit' class="primary" value="submit-true" name="Wish">
                 d o n e !
             </button>
+
+            <a href='/'>
+                <button class="secondary" name="Cancel">c a n c e l</button>
+            </a>
             {{--<button type='submit'--}}
             {{--class="primary icon"--}}
             {{--value="submit-true"--}}

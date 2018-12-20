@@ -10,8 +10,5 @@ class Tag extends Model
         return $this->belongsToMany('App\Wish')->withTimestamps();
     }
 
-    public function getTag() {
-        return $this->name;
-    }
 
 }

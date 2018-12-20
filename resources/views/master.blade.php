@@ -21,11 +21,11 @@
 
         <a name="menuham">
             <ul>
-                <li>world wishes</li>
+                <li>wishes!</li>
             </ul>
         </a>
 
-        <img src="/images/2019.png" alt="19">
+        <a href='/'><img src="/images/2019.png" alt="19"></a>
     </nav>
 
 </header>
